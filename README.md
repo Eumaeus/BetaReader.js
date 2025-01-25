@@ -1,6 +1,8 @@
-# BetaTyper.js
+# BetaReader.js
 
 A code library, and accompanying end-user webpage, for transliterating ancient Greek in Beta Code into Unicode.
+
+This library is coordinated with the functionality of the Julia [BetaReader.jl](https://github.com/Eumaeus/BetaReader.jl) library.
 
 ## Using
 
