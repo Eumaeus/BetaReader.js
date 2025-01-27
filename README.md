@@ -1,5 +1,7 @@
 # BetaReader.js
 
+[![Generic badge](https://img.shields.io/badge/version-1.1.0-green.svg)](https://shields.io/)
+
 A code library, and accompanying end-user webpage, for transliterating ancient Greek in Beta Code into Unicode.
 
 This library is coordinated with the functionality of the Julia [BetaReader.jl](https://github.com/Eumaeus/BetaReader.jl) library.
