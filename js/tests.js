@@ -209,6 +209,18 @@ var ut_unitTests = function(){
         { bc: "U", uc: "Υ" }, 
         { bc: "A", uc: "Α" },
         { bc: "E", uc: "Ε" },
+
+        // Archaic letters
+        { bc: "v", uc: "ϝ" },// digamma LC
+        { bc: "V", uc: "Ϝ" },// digamma UC
+        { bc: "*v", uc: "Ϝ" },// digamma UC
+        { bc: "#5", uc: "\u03E1" }, // sampi LC
+        { bc: "*#5", uc: "\u03E0" }, // sampi UC
+        { bc: "#711", uc: "\u03FB" },// san LC
+        { bc: "*#711", uc: "\u03FA" },// san UC
+        { bc: "#1", uc: "\u03DF" },// koppa UC
+        { bc: "*#1", uc: "\u03DE" },// koppa LC
+
         // diacriticals
         { bc: "a(", uc: "ἁ" },
         { bc: "a)", uc: "ἀ" },

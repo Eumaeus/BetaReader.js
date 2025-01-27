@@ -18,8 +18,8 @@ var betareader = function() {
     const uppercasemarker = "*";
     const diacriticals = breathings.concat(accents, iotasubscript, dieresis);
     const punctuation = [ ",", ".", `"`, "'", ";", "[", "]", "-", "—", ":", " ", "#", "\t", "\n"];
-    const validLCConsonants = "bgdzqklmncprstfxy".split(""); // We want an array
-    const validUCConsonants = "BGDZQKLMNCPRSTFXY".split("");
+    const validLCConsonants = "bgdvzqklmncprstfxy".split(""); // We want an array
+    const validUCConsonants = "BGDVZQKLMNCPRSTFXY".split("");
     const validLCVowels = "aehiouw".split("");
     const validUCVowels = "aehiouw".toUpperCase().split("");
     const diphthongs = ["ai", "ei", "oi", "ui", "au", "eu", "hu", "ou", "Ai", "Ei", "Oi", "Ui", "Au", "Eu", "Hu", "Ou"];
@@ -210,7 +210,7 @@ betareader.prototype.accumulate = function(s, acc, ret, upperCaseThisOne) {
             // Asterisk as a stand-alone character is not allowed
             if (charVec.length < 1) {
                 // iterate
-                let newAcc = acc + "#";
+                let newAcc = acc + "";
                 return this.accumulate(charVec.join(""), newAcc, newAcc, false);
             } else {
                 return this.accumulate(charVec.join(""), acc, ret, true); 
@@ -221,6 +221,7 @@ betareader.prototype.accumulate = function(s, acc, ret, upperCaseThisOne) {
             //console.log("+++Got here with: " + firstChar);
             if (this.isNumber(secondChar) == false) { 
                 // resolve firstChar alone
+                //      not subject to upper-casing
                 newAcc = acc + this.resolve(firstChar);
                 //console.log("+++ Resolved " + firstChar + " to " + newAcc);
                 if (charVec.length < 1) {
@@ -238,10 +239,16 @@ betareader.prototype.accumulate = function(s, acc, ret, upperCaseThisOne) {
                         charVec = charVec.slice(1);
                     } 
                     let resolvedChar = (() => { 
+                        console.log("Got here with: " + firstChar + secondChar + upperCaseThisOne);
                         if (upperCaseThisOne) {
-                            return this.resolve((firstChar + secondChar).toUpperCase());
+                            let retChar1 = this.resolve((firstChar + secondChar)); 
+                            let retChar2 = retChar1.toUpperCase();
+                            return retChar2;
                         } else {
-                            return this.resolve(firstChar + secondChar);
+                            let retChar = this.resolve((firstChar + secondChar)); 
+                            console.log(retChar + " : " + retChar.charCodeAt() + " " + upperCaseThisOne);
+                            //return this.resolve(firstChar + secondChar);
+                            return retChar;
                         }
                     })();
                     newAcc = acc + resolvedChar;
@@ -382,6 +389,7 @@ betareader.prototype.chardict = {
     "b" : { Ucode : "β", Name : "beta" },
     "g" : { Ucode : "γ", Name : "gamma" },
     "d" : { Ucode : "δ", Name : "delta" },
+    "v" : { Ucode : "ϝ", Name : "digamma" },
     "z" : { Ucode : "ζ", Name : "zeta" },
     "q" : { Ucode : "θ", Name : "theta" },
     "k" : { Ucode : "κ", Name : "kappa" },
@@ -444,6 +452,9 @@ betareader.prototype.chardict = {
     "#4": { Ucode: "\u03DE", Name: "glyph variant of archaic koppa" }, // Greek Letter Koppa → glyph variant of Greek Letter Koppa
     "#5": { Ucode: "\u03E1", Name: "sampi" }, // sampi
     "#400": { Ucode: "\u0371", Name: "heta" }, // letter heta
+    "#711": { Ucode: "\u03FB", Name: "san LC" }, // letter san
+
+    //"v": { Ucode: "\u03DD", Name: "lower-case digamma" }, // letter digamma
 
     // critical signs
 
