@@ -306,7 +306,7 @@ var ut_unitTests = function(){
 
 
 
-        { bc: "#53", uc: "\u205D" },
+        { bc: "#53", uc: "⁝" },
         { bc: "#150", uc: "\u221E" },
         { bc: "#310", uc: "\u2E0E" },
         { bc: "#465", uc: "\u2627" },

@@ -1,6 +1,6 @@
 # BetaReader.js
 
-[![Generic badge](https://img.shields.io/badge/version-1.1.0-green.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/version-1.2.0-green.svg)](https://shields.io/)
 
 A code library, and accompanying end-user webpage, for transliterating ancient Greek in Beta Code into Unicode.
 

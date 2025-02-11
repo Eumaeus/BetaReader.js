@@ -348,6 +348,14 @@ betareader.prototype.transcodeGreek = function(s) {
     return fixedoxia;
 }
 
+/**
+ *  For uniformity with the Julia library…
+ * 
+ **/
+betareader.prototype.betaToUnicode = function(s) {
+    return this.transcodeGreek(s);
+}
+
 /** 
  * Utility for seeing precisely what is going on.
  * Take a string in BetaCode, transcode it.

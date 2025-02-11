@@ -17,11 +17,13 @@
         <header>
             <em>BetaTyper.js</em> © 2025, Christopher W. Blackwell. <span class="cc_license"><a rel="license"
                 href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC.</a></span>
-            <span id="app_header_versionInfo">Version 1.0.0</span>
+            <span id="app_header_versionInfo">Version 1.2.0</span>
         </header>
 
         <article id="main_Container">
 
+            <p>“Beta Code” is a system for representing polytonic Ancient Greek text—with accents, breathings, <em>&amp;c.</em>—using Latin characters. It was developed in the 1970s to use the computers of the day with Ancient Greek. This utility, and the code behind it, transliterates Beta Code to modern Unicode.</p>
+            
             <div id="guideDiv">
                 <h2>Beta Code Guide</h2>
                 <table id="betaGuide">
@@ -135,7 +137,7 @@
                         let br  = new betareader(); <br/>
                         br.transcodeGreek("mh=nin");
                     </code> 
-                to play with transcoding.</p>
+                to play with transcoding. <em>N.b.</em> For consistency with the Julia library, you can also use <strong>br.betaToUnicode()</strong> to the same effect.</p>
             </div>
 
             </article>
