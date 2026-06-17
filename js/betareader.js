@@ -186,7 +186,7 @@ betareader.prototype.accumulate = function(s, acc, ret, upperCaseThisOne) {
             if (this.isSigmaTerminator(secondChar) || (secondChar == "") ) {
                 // No need to be fancy, just stick a terminal sigma in there.
                 let newAcc = (() => {
-                    if (this.upperCaseThisOne) {
+                    if (upperCaseThisOne) {
                         return acc + "Σ";
                     } else {
                         return acc + "ς";
@@ -196,7 +196,7 @@ betareader.prototype.accumulate = function(s, acc, ret, upperCaseThisOne) {
             } else {
                 // Sigma is transliterated to medial form
                 let newAcc = (() => {
-                    if (this.upperCaseThisOne) {
+                    if (upperCaseThisOne) {
                         return acc + "Σ";
                     } else {
                         return acc + "σ";
